@@ -9,7 +9,7 @@ import java.text.DecimalFormat;
 /***************************************************************************
  * ModelClass.java
  *
- * This program is used to finance and plan an individual's fetutex retirement.
+ * This program is used to finance and plan an individual's fetretirement.
  * This is class performs all the calculations and stores all the data
  * entered into the applet.
  
@@ -144,6 +144,8 @@ public class ModelClass extends Observable{
 			annualRetirementNeeded = (annualRetirementWanted) - socialSecurityIncome 
 			- otherIncomeAfterRetirement - partTimeIncome - employerPension ;
 		}
+
+
 		setValue(df.format(annualRetirementNeeded),6);
 
 
@@ -206,56 +208,85 @@ public class ModelClass extends Observable{
 			factor = 17.35;
 		else if(retirementAge.equals("70+") && lifeExpectancy.equals("Above Average")&& gender.equals("Female"))
 			factor = 18.79;
+
+
+		double additionalSavingsNeeded  = 0;
+
+		additionalSavingsNeeded = annualRetirementNeeded * factor;
+		//System.out.println(additionalSavingsNeeded);
+
+		double ssFactor = 0;
+
+		if (retirementAge.equals("55-59"))
+			ssFactor = 8.8;
+		else if(retirementAge.equals("60-64"))
+			ssFactor = 4.7;
+
+		socialSecurityIncome = socialSecurityIncome * ssFactor;
+
+		additionalSavingsNeeded = additionalSavingsNeeded + socialSecurityIncome;
+
+		double currentSavingsAmount = 0;
+
+		currentSavingsAmount = Double.parseDouble(getValue(9));
+
+		double yearsUntilRetirement = 0;
+		double intValueRetirementAge = 0;
+		if (retirementAge.equals("55-59"))
+			intValueRetirementAge = 55;
+		else if(retirementAge.equals("60-64"))
+			intValueRetirementAge = 60;
+		else if(retirementAge.equals("65-69"))
+			intValueRetirementAge = 65;
+		else if(retirementAge.equals("70+"))
+			intValueRetirementAge = 70;
+
+		yearsUntilRetirement = intValueRetirementAge - currentAge;
+
+		if(yearsUntilRetirement <= 10)
+			factor = 1.3;
+		else if(yearsUntilRetirement > 10 && yearsUntilRetirement <= 15)
+			factor = 1.6;
+		else if(yearsUntilRetirement > 15 && yearsUntilRetirement <= 20)
+			factor = 1.8;
+		else if(yearsUntilRetirement > 20 && yearsUntilRetirement <= 25)
+			factor = 2.1;
+		else if(yearsUntilRetirement > 25 && yearsUntilRetirement <= 30)
+			factor = 2.4;
+		else if(yearsUntilRetirement > 30 && yearsUntilRetirement <= 35)
+			factor = 2.8;
+		else if(yearsUntilRetirement > 35)
+			factor = 3.3;
+
+		additionalSavingsNeeded = additionalSavingsNeeded - (currentSavingsAmount * factor);
+
+
+		setValue(df.format(additionalSavingsNeeded),10);
+
+
+		if(yearsUntilRetirement <= 10)
+			factor = .085;
+		else if(yearsUntilRetirement > 10 && yearsUntilRetirement <= 15)
+			factor = .052;
+		else if(yearsUntilRetirement > 15 && yearsUntilRetirement <= 20)
+			factor = .036;
+		else if(yearsUntilRetirement > 20 && yearsUntilRetirement <= 25)
+			factor = .027;
+		else if(yearsUntilRetirement > 25 && yearsUntilRetirement <= 30)
+			factor = .020;
+		else if(yearsUntilRetirement > 30 && yearsUntilRetirement <= 35)
+			factor = .016;
+		else if(yearsUntilRetirement > 35)
+			factor = .013;
+
+		double annualAmountNeeded = 0;
+		annualAmountNeeded = additionalSavingsNeeded * factor;
+
+		double monthlyAmountNeeded = annualAmountNeeded/12;
+
+
+		setValue(df.format(annualAmountNeeded),11);
+		setValue(df.format(monthlyAmountNeeded),17);
+
 	}
-	double additionalSavingsNeeded  = 0;
-
-	additionalSavingsNeeded = annualRetirementNeeded * factor;
-	//System.out.println(additionalSavingsNeeded);
-
-	double ssFactor = 0;
-
-	if (retirementAge.equals("55-59"))
-		ssFactor = 8.8;
-	else if(retirementAge.equals("60-64"))
-		ssFactor = 4.7;
-
-	socialSecurityIncome = socialSecurityIncome * ssFactor;
-
-	additionalSavingsNeeded = additionalSavingsNeeded + socialSecurityIncome;
-
-	double currentSavingsAmount = 0;
-
-	currentSavingsAmount = Double.parseDouble(getValue(9));
-
-	double yearsUntilRetirement = 0;
-	double intValueRetirementAge = 0;
-	if (retirementAge.equals("55-59"))
-		intValueRetirementAge = 55;
-	else if(retirementAge.equals("60-64"))
-		intValueRetirementAge = 60;
-	else if(retirementAge.equals("65-69"))
-		intValueRetirementAge = 65;
-	else if(retirementAge.equals("70+"))
-		intValueRetirementAge = 70;
-
-	yearsUntilRetirement = intValueRetirementAge - currentAge;
-
-	if(yearsUntilRetirement <= 10)
-		factor = 1.3;
-	else if(yearsUntilRetirement > 10 && yearsUntilRetirement <= 15)
-		factor = 1.6;
-	else if(yearsUntilRetirement > 15 && yearsUntilRetirement <= 20)
-		factor = 1.8;
-	else if(yearsUntilRetirement > 20 && yearsUntilRetirement <= 25)
-		factor = 2.1;
-	else if(yearsUntilRetirement > 25 && yearsUntilRetirement <= 30)
-		factor = 2.4;
-	else if(yearsUntilRetirement > 30 && yearsUntilRetirement <= 35)
-		factor = 2.8;
-	else if(yearsUntilRetirement > 35)
-		factor = 3.3;
-
-	additionalSavingsNeeded = additionalSavingsNeeded - (currentSavingsAmount * factor);
 }
-
-		
