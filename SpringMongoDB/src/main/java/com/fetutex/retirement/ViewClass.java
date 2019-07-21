@@ -108,6 +108,44 @@ private void initComponents() {
 	jLabel18 = new javax.swing.JLabel();
 	jLabel19 = new javax.swing.JLabel();
 	jLabel20 = new javax.swing.JLabel();
+	
+	setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+	setStub(null);
+
+	jTextField1.setToolTipText("Your first and last name.");
+	jTextField1.setPreferredSize(new java.awt.Dimension(100, 20));
+
+	jLabel1.setText("Name");
+
+	jLabel2.setText("Birthdate (mm/dd/yyyy)");
+
+	jTextField3.setToolTipText("Your current annual income.");
+	jTextField3.setPreferredSize(new java.awt.Dimension(100, 20));
+
+	jLabel3.setText("Annual Income");
+
+	jLabel4.setText("Social Security Income");
+
+	jTextField4.setEditable(false);
+	jTextField4.setToolTipText("Income received annually from social security");
+	jTextField4.setPreferredSize(new java.awt.Dimension(100, 20));
+
+	jButton1.setText("Calculate");
+	jButton1.setToolTipText("Performs the calculations needed to compute annual amount needed to reach your goal.");
+	jButton1.addActionListener(new java.awt.event.ActionListener() {
+		public void actionPerformed(java.awt.event.ActionEvent evt) {
+			jButton1ActionPerformed(evt);
+		}
+	});
+
+	jButton2.setText("Reset");
+	jButton2.setToolTipText("Sets all fields to its default value");
+	jButton2.addActionListener(new java.awt.event.ActionListener() {
+		public void actionPerformed(java.awt.event.ActionEvent evt) {
+			jButton2ActionPerformed(evt);
+		}
+	});
+
 
 
 	
