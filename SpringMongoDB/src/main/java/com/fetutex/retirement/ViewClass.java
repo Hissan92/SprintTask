@@ -145,6 +145,57 @@ private void initComponents() {
 			jButton2ActionPerformed(evt);
 		}
 	});
+	jTextField6.setToolTipText("Income received annually from other sources (such as pension plans, earnings on assets, part-time job, etc.)");
+	jTextField6.addActionListener(new java.awt.event.ActionListener() {
+		public void actionPerformed(java.awt.event.ActionEvent evt) {
+			//jTextField6ActionPerformed(evt);
+		}
+	});
+
+	jTextField7.setEditable(false);
+	jTextField7.setToolTipText("This is how much you need to make up for each retirement year");
+
+	jTextField8.setToolTipText("Total Savings to date (include money accumulated in a 401(k), IRA, or similar retirement plan)");
+	jTextField8.addActionListener(new java.awt.event.ActionListener() {
+		public void actionPerformed(java.awt.event.ActionEvent evt) {
+			//jTextField8ActionPerformed(evt);
+		}
+	});
+
+	jTextField9.setEditable(false);
+	jTextField9.setToolTipText("The total amount of savings needed when you retire.");
+
+	jTextField10.setEditable(false);
+	jTextField10.setToolTipText("Annual amount you'll need to save each year to earn the specified percentage of your income.");
+
+	jLabel6.setText("Other (earnings on assets etc.)");
+
+	jLabel7.setText("Annual Retirement funds needed");
+
+	jLabel8.setText("Expected Retirement Age");
+
+	jLabel9.setText("Life Expectancy");
+
+	jLabel10.setText("Total Amount In Savings");
+
+	jLabel11.setText("Total Savings Needed at Retirement");
+
+	jLabel12.setText("ANNUAL AMOUNT NEEDED");
+
+	jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "55-59", "60-64", "65-69", "70+" }));
+	jComboBox1.setToolTipText("Age at which you expect to retire");
+
+	jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Below Average", "Average", "Above Average" }));
+	jComboBox2.setToolTipText("Life Expectancy:\n(The average male life expectancy is 89)\n(The average female life expectany is 92)");
+
+	jButton3.setText("Print");
+	jButton3.setToolTipText(" Brings up a read-only dialog showing a summary of the resulting plan in a printable form");
+	jButton3.addActionListener(new java.awt.event.ActionListener() {
+		public void actionPerformed(java.awt.event.ActionEvent evt) {
+			jButton3ActionPerformed(evt);
+		}
+	});
+
 
 
 
