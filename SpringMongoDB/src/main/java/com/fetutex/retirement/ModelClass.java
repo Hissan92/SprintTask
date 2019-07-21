@@ -144,6 +144,68 @@ public class ModelClass extends Observable{
 			annualRetirementNeeded = (annualRetirementWanted) - socialSecurityIncome 
 			- otherIncomeAfterRetirement - partTimeIncome - employerPension ;
 		}
+		setValue(df.format(annualRetirementNeeded),6);
 
+
+		String retirementAge = "";
+		String lifeExpectancy = "";
+		String gender = "";
+		double factor = 0;
+
+		retirementAge = getValue(7);
+
+		lifeExpectancy = getValue(8);
+
+		gender = getValue(13);
+
+		if(retirementAge.equals("55-59") && lifeExpectancy.equals("Below Average") && gender.equals("Male"))
+			factor = 18.79;
+		else if(retirementAge.equals("55-59") && lifeExpectancy.equals("Below Average") && gender.equals("Female"))
+			factor = 20.53;
+		else if(retirementAge.equals("55-59") && lifeExpectancy.equals("Average")&& gender.equals("Male"))
+			factor = 21.71;
+		else if(retirementAge.equals("55-59") && lifeExpectancy.equals("Average")&& gender.equals("Female"))
+			factor = 22.79;
+		else if(retirementAge.equals("55-59") && lifeExpectancy.equals("Above Average")&& gender.equals("Male"))
+			factor = 23.46;
+		else if(retirementAge.equals("55-59") && lifeExpectancy.equals("Above Average")&& gender.equals("Female"))
+			factor = 24.40;
+		else if(retirementAge.equals("60-64") && lifeExpectancy.equals("Below Average")&& gender.equals("Male"))
+			factor = 16.31;
+		else if(retirementAge.equals("60-64") && lifeExpectancy.equals("Below Average")&& gender.equals("Female"))
+			factor = 18.32;
+		else if(retirementAge.equals("60-64") && lifeExpectancy.equals("Average")&& gender.equals("Male"))
+			factor = 19.68;
+		else if(retirementAge.equals("60-64") && lifeExpectancy.equals("Average")&& gender.equals("Female"))
+			factor = 20.93;
+		else if(retirementAge.equals("60-64") && lifeExpectancy.equals("Above Average")&& gender.equals("Male"))
+			factor = 21.71;
+		else if(retirementAge.equals("60-64") && lifeExpectancy.equals("Above Average")&& gender.equals("Female"))
+			factor = 22.79;
+		else if(retirementAge.equals("65-69") && lifeExpectancy.equals("Below Average")&& gender.equals("Male"))
+			factor = 13.45;
+		else if(retirementAge.equals("65-69") && lifeExpectancy.equals("Below Average")&& gender.equals("Female"))
+			factor = 15.77;
+		else if(retirementAge.equals("65-69") && lifeExpectancy.equals("Average")&& gender.equals("Male"))
+			factor = 17.35;
+		else if(retirementAge.equals("65-69") && lifeExpectancy.equals("Average")&& gender.equals("Female"))
+			factor = 18.79;
+		else if(retirementAge.equals("65-69") && lifeExpectancy.equals("Above Average")&& gender.equals("Male"))
+			factor = 19.68;
+		else if(retirementAge.equals("65-69") && lifeExpectancy.equals("Above Average")&& gender.equals("Female"))
+			factor = 20.93;
+		else if(retirementAge.equals("70+") && lifeExpectancy.equals("Below Average")&& gender.equals("Male"))
+			factor = 10.15;
+		else if(retirementAge.equals("70+") && lifeExpectancy.equals("Below Average")&& gender.equals("Female"))
+			factor = 12.83;
+		else if(retirementAge.equals("70+") && lifeExpectancy.equals("Average")&& gender.equals("Male"))
+			factor = 14.65;
+		else if(retirementAge.equals("70+") && lifeExpectancy.equals("Average")&& gender.equals("Female"))
+			factor = 16.31;
+		else if(retirementAge.equals("70+") && lifeExpectancy.equals("Above Average")&& gender.equals("Male"))
+			factor = 17.35;
+		else if(retirementAge.equals("70+") && lifeExpectancy.equals("Above Average")&& gender.equals("Female"))
+			factor = 18.79;
+	}}
 
 		
