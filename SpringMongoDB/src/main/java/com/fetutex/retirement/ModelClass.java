@@ -206,6 +206,56 @@ public class ModelClass extends Observable{
 			factor = 17.35;
 		else if(retirementAge.equals("70+") && lifeExpectancy.equals("Above Average")&& gender.equals("Female"))
 			factor = 18.79;
-	}}
+	}
+	double additionalSavingsNeeded  = 0;
+
+	additionalSavingsNeeded = annualRetirementNeeded * factor;
+	//System.out.println(additionalSavingsNeeded);
+
+	double ssFactor = 0;
+
+	if (retirementAge.equals("55-59"))
+		ssFactor = 8.8;
+	else if(retirementAge.equals("60-64"))
+		ssFactor = 4.7;
+
+	socialSecurityIncome = socialSecurityIncome * ssFactor;
+
+	additionalSavingsNeeded = additionalSavingsNeeded + socialSecurityIncome;
+
+	double currentSavingsAmount = 0;
+
+	currentSavingsAmount = Double.parseDouble(getValue(9));
+
+	double yearsUntilRetirement = 0;
+	double intValueRetirementAge = 0;
+	if (retirementAge.equals("55-59"))
+		intValueRetirementAge = 55;
+	else if(retirementAge.equals("60-64"))
+		intValueRetirementAge = 60;
+	else if(retirementAge.equals("65-69"))
+		intValueRetirementAge = 65;
+	else if(retirementAge.equals("70+"))
+		intValueRetirementAge = 70;
+
+	yearsUntilRetirement = intValueRetirementAge - currentAge;
+
+	if(yearsUntilRetirement <= 10)
+		factor = 1.3;
+	else if(yearsUntilRetirement > 10 && yearsUntilRetirement <= 15)
+		factor = 1.6;
+	else if(yearsUntilRetirement > 15 && yearsUntilRetirement <= 20)
+		factor = 1.8;
+	else if(yearsUntilRetirement > 20 && yearsUntilRetirement <= 25)
+		factor = 2.1;
+	else if(yearsUntilRetirement > 25 && yearsUntilRetirement <= 30)
+		factor = 2.4;
+	else if(yearsUntilRetirement > 30 && yearsUntilRetirement <= 35)
+		factor = 2.8;
+	else if(yearsUntilRetirement > 35)
+		factor = 3.3;
+
+	additionalSavingsNeeded = additionalSavingsNeeded - (currentSavingsAmount * factor);
+}
 
 		
