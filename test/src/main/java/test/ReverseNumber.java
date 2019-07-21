@@ -11,6 +11,8 @@ public class ReverseNumber {
 	    Scanner in = new Scanner(System.in);
 	    num = in.nextInt();
 	    
+	    
+	    
 	    while( num != 0 )
 	    {
 	        reversenum = reversenum * 10;
@@ -20,5 +22,6 @@ public class ReverseNumber {
 
 	    System.out.println("Reverse of input number is: "+reversenum);
 	 }
+	
 	}
 		
