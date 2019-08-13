@@ -228,7 +228,63 @@ private void initComponents() {
 		public void actionPerformed(java.awt.event.ActionEvent evt) {
 			jRadioButton1ActionPerformed(evt);
 		}
+	})
+	jSpinner2.setToolTipText("The percentage of your current annual income you would like to receive each year during retirement.");
+	jSpinner2.setValue(70);
+
+	jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18));
+	jLabel13.setText("Retirement Planning Calculator");
+
+	jLabel14.setText("Gender");
+
+	jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
+
+	jLabel15.setText("MONTHLY AMOUNT NEEDED");
+
+	jTextField2.setEditable(false);
+	jTextField2.addActionListener(new java.awt.event.ActionListener() {
+		public void actionPerformed(java.awt.event.ActionEvent evt) {
+			//jTextField2ActionPerformed(evt);
+		}
 	});
+
+	jLabel16.setText("Traditional Employer Pension");
+
+	jLabel17.setText("Part-time Income");
+
+	jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("MM/dd/yyyy"))));
+
+	buttonGroup1.add(jRadioButton1);
+	jRadioButton1.setActionCommand("jRadioButton1");
+	jRadioButton1.setLabel("Expected annual income after retirement");
+	jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+		public void actionPerformed(java.awt.event.ActionEvent evt) {
+			jRadioButton1ActionPerformed(evt);
+		}
+	});
+
+	buttonGroup1.add(jRadioButton2);
+	jRadioButton2.setSelected(true);
+	jRadioButton2.setText("Percent of Annual Income Wanted for Retirement");
+	jRadioButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+		public void mouseClicked(java.awt.event.MouseEvent evt) {
+			//jRadioButton2MouseClicked(evt);
+		}
+	});
+	jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+		public void actionPerformed(java.awt.event.ActionEvent evt) {
+			jRadioButton2ActionPerformed(evt);
+		}
+	});
+
+	jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14));
+	jLabel18.setText("Basic Information");
+
+	jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14));
+	jLabel19.setText("Results");
+
+	jLabel20.setFont(new java.awt.Font("Tahoma", 1, 14));
+	jLabel20.setText("Additional Information");
 
 
 
