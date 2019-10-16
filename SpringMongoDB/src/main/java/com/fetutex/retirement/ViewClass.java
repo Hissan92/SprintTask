@@ -531,7 +531,94 @@ private void initComponents() {
 																												.addComponent(jLabel8)
 																												.addComponent(jLabel9)
 								
+																												.addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+																												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+																												.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+																														.addComponent(jLabel10)
+																														.addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+																														.addGap(39, 39, 39)
+																														.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+																																.addGroup(layout.createSequentialGroup()
+																																		.addComponent(jLabel19)
+																																		.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+																																		.addComponent(jLabel11))
+																																		.addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+																																		.addGap(18, 18, 18)
+																																		.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+																																				.addComponent(jLabel12)
+																																				.addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+																																				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+																																				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+																																						.addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+																																						.addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+																																						.addGap(18, 18, 18)
+																																						.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+																																								.addGroup(layout.createSequentialGroup()
+																																										.addComponent(jButton1)
+																																										.addGap(436, 436, 436)
+																																										.addComponent(jScrollBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 15, Short.MAX_VALUE))
+																																										.addGroup(layout.createSequentialGroup()
+																																												.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+																																														.addComponent(jButton2)
+																																														.addComponent(jButton3))
+																																														.addContainerGap())))
+		);
 
+		jLabel8.getAccessibleContext().setAccessibleName("Expected Retirement Age");
+		jRadioButton1.getAccessibleContext().setAccessibleName("Expected annual income after retirement");
+	}// </editor-fold>
+
+
+
+
+	/***************************************************************************
+	 * This method handles the event actions performed when the print button
+	 * is clicked.
+	 ***************************************************************************/
+	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+
+		// TODO add your handling code here:
+	}      
+
+	/***************************************************************************
+	 * This method handles the event actions performed when the radio button
+	 * is clicked.
+	 ***************************************************************************/
+	private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                              
+		// TODO add your handling code here:
+		jSpinner2.setEnabled(false);
+		jTextField13.setEditable(true);
+
+	}                                             
+
+	/***************************************************************************
+	 * This method handles the event actions performed when the radio button
+	 * is clicked.
+	 ***************************************************************************/
+	private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                              
+		// TODO add your handling code here:
+		jSpinner2.setEnabled(true);
+		jTextField13.setEditable(false);
+	}    
+
+	/***************************************************************************
+	 * This method handles the event actions performed when the reset button
+	 * is clicked. It calls the reset method from theModel class.
+	 ***************************************************************************/
+	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+
+		theModel.reset();
+
+
+		/**These need to be remove to and used and done with MVC*/
+		//jTextField1.setText(theModel.getValue(0));
+		//jSpinner1.setValue(theModel.getValue(1));
+		jTextField3.setText(theModel.getValue(2));
+		//jSpinner2.setValue(theModel.getValue(3));
+		jTextField6.setText(theModel.getValue(5));
+		jTextField8.setText(theModel.getValue(9));
+
+	}          
 
 
 
