@@ -620,6 +620,124 @@ private void initComponents() {
 
 	}          
 
+	
+
+	/***************************************************************************
+	 * This method handles the event actions performed when the calculate 
+	 * button is clicked. 
+	 * After all the array fields are set according to the data insert in the 
+	 * text field the calculate method from the model class is called.
+	 ***************************************************************************/
+	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+
+		boolean moveOn = true;
+		String errMsg = "The following field(s) are empty: ";
+		String errMsgTF1 = "";
+		String errMsgTF3 = "";
+		String errMsgTF6 = "";
+		String errMsgTF7 = "";
+		String errMsgTF8 = "";
+		String errMsgTF11 = "";
+		String errMsgTF12 = "";
+		String errMsgTF13 = "";
+		String errMsgJS2 = "";
+		String errMsgFTF1 = "";
+
+
+		if(jTextField1.getText().length() == 0){
+			errMsgTF1 = "\n name; ";
+			jTextField1.setBackground(Color.yellow);			
+			moveOn = false;			
+		}
+		else{
+			theModel.setValue(jTextField1.getText(), 0);
+			jTextField1.setBackground(Color.white);
+		}
+
+		if(jFormattedTextField1.getText().length() == 0){
+			errMsgFTF1 = "\n birthdate; ";
+			jFormattedTextField1.setBackground(Color.yellow);			
+			moveOn = false;			
+		}
+		else{
+			theModel.setValue(jFormattedTextField1.getText().substring(jFormattedTextField1.getText().length()-4),12);
+			jFormattedTextField1.setBackground(Color.white);
+			//System.out.print(jFormattedTextField1.getText().substring(jFormattedTextField1.getText().length()-4));
+		}
+
+		theModel.setValue(jComboBox3.getSelectedItem().toString(),13);
+
+
+		if(jTextField3.getText().length() == 0){
+			errMsgTF3 = "\n annual income; ";
+			jTextField3.setBackground(Color.yellow);
+			moveOn = false;			
+		}
+		else{
+			jTextField3.setBackground(Color.white);
+			theModel.setValue(jTextField3.getText(), 2);
+		}
+
+		if(jRadioButton2.isSelected() == true)
+		{
+			theModel.setValue("calculatePercentage", 18);
+			if(jSpinner2.getValue().toString().length() == 0){
+				errMsgJS2 = "\n percentage of income wanted; ";
+				jSpinner2.setBackground(Color.yellow);
+				moveOn = false;			
+			}
+			else{
+				theModel.setValue(jSpinner2.getValue().toString(), 3);
+				jSpinner2.setBackground(Color.white);
+			}
+		}
+		else if(jRadioButton1.isSelected() == true){
+			theModel.setValue("doNotCalculatePercentage", 18);
+			if(jTextField13.getText().length() == 0){
+				errMsgTF13 = "\n traditional employer pension; ";
+				jTextField13.setBackground(Color.yellow);
+				moveOn = false;			
+			}
+			else{
+				jTextField13.setBackground(Color.white);
+				theModel.setValue(jTextField13.getText(), 14);
+			}
+		}
+
+
+
+		if(jTextField11.getText().length() == 0){
+			errMsgTF11 = "\n traditional employer pension; ";
+			jTextField11.setBackground(Color.yellow);
+			moveOn = false;			
+		}
+		else{
+			jTextField11.setBackground(Color.white);
+			theModel.setValue(jTextField11.getText(), 15);
+		}
+
+		if(jTextField12.getText().length() == 0){
+			errMsgTF12 = "\n part-time income; ";
+			jTextField12.setBackground(Color.yellow);
+			moveOn = false;			
+		}
+		else{
+			jTextField12.setBackground(Color.white);
+			theModel.setValue(jTextField12.getText(), 16);
+		}
+
+
+		if(jTextField6.getText().length() == 0){
+			errMsgTF6 = "\n other income; ";
+			jTextField6.setBackground(Color.yellow);
+			moveOn = false;			
+		}
+		else{
+			jTextField6.setBackground(Color.white);
+			theModel.setValue(jTextField6.getText(), 5);
+		}
+
+
 
 
 
