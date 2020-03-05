@@ -1142,6 +1142,91 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
 	}
 
 
+	if(jTextField11.getText().length() == 0){
+		errMsgTF11 = "\n traditional employer pension; ";
+		jTextField11.setBackground(Color.yellow);
+		moveOn = false;			
+	}
+	else{
+		jTextField11.setBackground(Color.white);
+		theModel.setValue(jTextField11.getText(), 15);
+	}
+
+	if(jTextField12.getText().length() == 0){
+		errMsgTF12 = "\n part-time income; ";
+		jTextField12.setBackground(Color.yellow);
+		moveOn = false;			
+	}
+	else{
+		jTextField12.setBackground(Color.white);
+		theModel.setValue(jTextField12.getText(), 16);
+	}
+
+
+	if(jTextField6.getText().length() == 0){
+		errMsgTF6 = "\n other income; ";
+		jTextField6.setBackground(Color.yellow);
+		moveOn = false;			
+	}
+	else{
+		jTextField6.setBackground(Color.white);
+		theModel.setValue(jTextField6.getText(), 5);
+	}
+
+
+	theModel.setValue(jComboBox1.getSelectedItem().toString(), 7);
+
+	theModel.setValue(jComboBox2.getSelectedItem().toString(), 8);
+
+
+	if(jTextField8.getText().length() == 0){
+		errMsgTF8 = "\n amount in savings account; ";
+		jTextField8.setBackground(Color.yellow);
+		moveOn = false;			
+	}
+	else{
+		jTextField8.setBackground(Color.white);
+		theModel.setValue(jTextField8.getText(), 9);
+	}
+
+
+	if(moveOn != true)
+		JOptionPane.showMessageDialog(
+				null,
+				errMsg + errMsgTF1 + errMsgTF3 + 
+				errMsgTF6 + errMsgTF7 + errMsgTF8 + 
+				errMsgFTF1 + errMsgJS2 + errMsgTF11 +
+				errMsgTF12 + errMsgTF13,
+				"Finance Calculator",
+				JOptionPane.INFORMATION_MESSAGE);
+	else
+		theModel.calculate();
+
+}                                        
+
+
+/***************************************************************************
+ * This method handles the changes made to the indexes in the array.
+ * When a index is change inside the dataStorage array this method is 
+ * called to update the view of the applet.
+ ***************************************************************************/
+public void update(Observable arg0, Object arg1) {
+
+	jTextField1.setText(theModel.getValue(0));
+	//		jSpinner1.setValue(theModel.getValue(1));
+	//		jTextField3.setText(theModel.getValue(2));
+	//		jSpinner2.setValue(theModel.getValue(3));
+	//		jTextField6.setText(theModel.getValue(5));
+	//		jTextField8.setText(theModel.getValue(9));
+
+	jTextField4.setText(theModel.getValue(4));
+	jTextField7.setText(theModel.getValue(6));
+	jTextField9.setText(theModel.getValue(10));
+	jTextField10.setText(theModel.getValue(11));
+	jTextField2.setText(theModel.getValue(17));
+
+}
+
 
 
 
